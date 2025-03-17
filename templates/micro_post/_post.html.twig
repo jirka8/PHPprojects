@@ -1,0 +1,25 @@
+<div class="mb-4">
+    <div class="text-2xl">
+        <a href="{{ path('app_micro_post_show', {'id': post.id}) }}">
+            {{ post.title }}
+        </a>
+    </div>
+    <div class="text-xl">
+        {{ post.text }}
+    </div>
+    <div class="text-sm text-gray-500"> 
+        {{ post.date|date('j.m.Y') }}
+    </div>
+    <div>
+        <a href="#">
+            Like <span class="px-2 rounded-md bg-gray-200">0</span>
+        </a>
+    </div>
+    <div class="text-sm text-gray-500">
+        <a href="#">user@email.com</a>
+    </div>
+    <div class="flex">
+        <a href="{{ path('app_micro_post_edit', {id: post.id}) }}" class="mr-2">Edit</a>
+        <a href="{{ path('app_micro_post_comment', {post: post.id}) }}">Comment <span class="px-2 rounded-md bg-gray-200">{{ post.comments.count }}</span></a>
+    </div>
+</div>
