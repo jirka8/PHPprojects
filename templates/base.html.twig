@@ -25,6 +25,9 @@
                 <div class="text-sm text-gray-400">
                     <div>Login & Registration</div>
                     <div>
+                         <a href="{{ path('app_login') }}">Login</a>
+                     </div>
+                    <div>
                         <a href="{{ path('app_micro_post_add') }}">Add new</a>
                     </div>
                 </div>
@@ -33,6 +36,11 @@
         <div class="w-full md:w-2/3 mx-auto">
             {% for message in app.flashes('success') %}
                 <div class="rounded-md p-2 border-green-300 bg-green-50 border mb-4">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('error') %}
+                <div class="rounded-md p-2 border-red-300 bg-red-50 border mb-4">
                     {{ message }}
                 </div>
             {% endfor %}
